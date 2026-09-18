@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review-fix"
+  short_description: "Verify findings, gated fixes, resolved PR threads"
+  default_prompt: "Use $review-fix to verify the review findings, plan the fixes for my approval, then implement and resolve the threads."
+policy:
+  allow_implicit_invocation: false

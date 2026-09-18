@@ -1,0 +1,6 @@
+interface:
+  display_name: "Self-review"
+  short_description: "Context-aware merge-blocker review, analysis only"
+  default_prompt: "Use $self-review to review this topic's changes for merge-blockers with the recorded decisions in hand."
+policy:
+  allow_implicit_invocation: false
