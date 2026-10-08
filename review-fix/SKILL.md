@@ -11,7 +11,7 @@ a verdict, valid ones get a fix commit, and every PR thread ends with a reply
 and a resolution — visible on the PR afterward, not just in a chat log.
 
 Read first: `~/.agents/skills/_shared/config.md`,
-`~/.agents/skills/_shared/topic.md`, `~/.agents/skills/_shared/style.md`.
+`~/.agents/skills/_shared/topic.md`.
 
 ## Preconditions
 
@@ -34,8 +34,11 @@ Never fix an unverified finding.
 
 ### 2. Plan and gate
 
-Present a table in chat (style contract): finding → verdict → proposed fix →
-estimated size. Merge-blockers first. **Wait for approval** of the plan; the
+Read `~/.agents/skills/_shared/style.md` now, immediately before reporting.
+Explain the verified issues, their impact, and the smallest proposed fixes in
+simple terms, blockers first. Use a compact list or table only if it helps;
+summarize rejected findings by why no fix is needed. Preserve all verdicts
+and evidence in `review.md`. **Wait for approval** of the plan; the
 human may drop, defer, or adjust items.
 
 ### 3. Implement
@@ -60,3 +63,7 @@ After pushing:
 
 Update `review.md` with all verdicts and outcomes. Log line in `_state.md`;
 phase → `done` when the human confirms nothing remains.
+
+Reread `~/.agents/skills/_shared/style.md` immediately before the final handoff.
+Briefly explain what was fixed, whether verification passed, and anything
+still requiring attention.

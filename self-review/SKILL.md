@@ -11,7 +11,7 @@ conscious choices don't get flagged as mistakes. Analysis only: this skill
 never edits code.
 
 Read first: `~/.agents/skills/_shared/config.md`,
-`~/.agents/skills/_shared/topic.md`, `~/.agents/skills/_shared/style.md`.
+`~/.agents/skills/_shared/topic.md`.
 
 ## Preconditions
 
@@ -36,19 +36,17 @@ code** — they are the lens for every judgment below.
 ### 2. Context check — before anything becomes a finding
 
 Cross-check every candidate finding against `decisions.md`. If it's a recorded
-deliberate deviation, it is **not a finding**; list it once under "Verified
-deliberate" so the human sees the check happened. Only unexplained departures
+deliberate deviation, it is **not a finding**; record it once under "Verified
+deliberate" in `review.md` so the check is preserved. Only unexplained departures
 survive as findings.
 
 ### 3. Report
 
-Tiered per the style contract:
-
-- **Merge-blockers** in full: what, why it blocks, inline context, where it
-  lives.
-- **Lower-impact** findings as individually named one-liners.
-- **Verified deliberate** deviations, one line each.
-
-Deliver the full report in chat. Write `review.md` (report + appendix with
-evidence and locations). Log line in `_state.md`. Recommend `review-fix` if
+Read `~/.agents/skills/_shared/style.md` now, immediately before reporting.
+Lead with whether anything blocks merging. Explain blockers through their
+practical consequences and recommended fixes; use a concrete failure example
+where useful. Mention lower-impact findings or deliberate deviations in chat
+when they affect the human's decision. Keep the complete findings and
+"Verified deliberate" checks in `review.md`, with evidence and locations in
+its appendix. Log line in `_state.md`. Recommend `review-fix` if
 anything needs fixing; changes remain untouched.

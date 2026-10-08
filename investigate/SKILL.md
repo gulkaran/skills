@@ -11,7 +11,7 @@ approach**. This phase is interactive: the human asks questions, redirects,
 and makes the approach call. Automate the legwork, never the judgment.
 
 Read first: `~/.agents/skills/_shared/config.md`,
-`~/.agents/skills/_shared/topic.md`, `~/.agents/skills/_shared/style.md`.
+`~/.agents/skills/_shared/topic.md`.
 No production code changes in this phase.
 
 ## Process
@@ -42,10 +42,9 @@ where this work lives, what it touches, and what constrains it.
 
 ### 4. Synthesize findings
 
-Tiered per the style contract: high-impact findings in full with inline
-context; lower-impact findings individually named one-liners. Findings include
-constraints, risks, prior art in the repo, and anything that would surprise
-the human later.
+Identify the main findings, their practical impact, and how they affect the
+approach. Preserve constraints, risks, prior art, and supporting evidence for
+the artifact; distinguish decision-relevant findings from minor details.
 
 ### 5. Approaches
 
@@ -55,16 +54,20 @@ way to do it, say exactly that and why, and present just it.
 
 ### 6. Report and converse
 
-Deliver the full report in chat (style contract). Then converse: answer
-questions, dig deeper where asked, revise findings. **The human picks the
+Read `~/.agents/skills/_shared/style.md` now, immediately before reporting.
+Explain the main findings, intended features, and recommended approach in
+simple terms, with a concrete example where useful. Then converse: answer
+questions, dig deeper where asked, revise findings. Reread the style contract
+before a revised report after further investigation. **The human picks the
 approach.** Do not proceed on a recommendation alone.
 
 ### 7. Record
 
 On the human's choice:
 
-- Write `research.md`: the report as delivered, the chosen approach, plus an
-  appendix (evidence, paths, commands run).
+- Write `research.md`: the human-facing explanation, complete findings and
+  approach reasoning, the chosen approach, plus an appendix (evidence, paths,
+  commands run).
 - Append the approach choice to `decisions.md` (decision + why).
 - Update `_state.md`: phase → `designing`, log line.
 - Tell the human the topic is ready for `design`.

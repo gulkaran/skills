@@ -24,7 +24,9 @@ Look for opportunities to prefactor the code to make the implementation easier. 
 
 ### 3. Draft vertical slices
 
-Break the work into **tracer bullet** tickets.
+Break the work into **tracer bullet** tickets. When publishing an approved
+design, preserve its PR grouping: multiple tickets may belong to one PR.
+Ticket or context-window boundaries do not create additional PRs.
 
 <vertical-slice-rules>
 

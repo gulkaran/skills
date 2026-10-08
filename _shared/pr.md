@@ -1,7 +1,8 @@
 # Pull request style
 
-Every PR created by the workflow uses this shape. One PR per slice of the
-design's PR stack; a PR covers only its own branch's changes.
+Every PR created by the workflow uses this shape. Follow the approved
+design's minimal PR grouping; multiple implementation slices may share a PR.
+A PR covers only its own branch's changes.
 
 ## Title
 

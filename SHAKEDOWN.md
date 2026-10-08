@@ -11,18 +11,18 @@ friction in the skill docs, not to ship the work fast. Fix docs as you go.
       **your** approach choice; `research.md` + `decisions.md` written.
 - [ ] `design` the chosen approach. Check: it spiked the riskiest assumption
       (or explicitly said nothing was risky); acceptance criteria are
-      behavior, not steps; PR stack slices look one-session-sized; it required
+      behavior, not steps; PR count is minimal with a clear reason for each split; it required
       an explicit "approved"; `design.md` + stamp in `_state.md`.
 - [ ] `execute`. Check: red commit exists **before** implementation commits;
       no test was weakened post-red without a `decisions.md` line; drift
       handled per policy; it stopped at the pre-PR report and waited; PR
       matches `_shared/pr.md`.
 - [ ] `self-review`. Check: it read `decisions.md` first; deliberate
-      deviations appear under "Verified deliberate", not as findings;
+      deviations appear under "Verified deliberate" in the artifact, not as findings;
       test-integrity pass ran against the red commits; merge-blockers ranked
       above named one-liner nits.
-- [ ] `review-fix`. Check: every finding got a verdict before any fix; plan
-      table gated on you; one commit per fix; PR threads replied to and
+- [ ] `review-fix`. Check: every finding got a verdict before any fix; plain-language fix
+      plan gated on you; one commit per fix; PR threads replied to and
       resolved — the trail is visible on GitHub.
 
 ## Planning half
@@ -37,8 +37,11 @@ friction in the skill docs, not to ship the work fast. Fix docs as you go.
 
 ## Cross-cutting
 
-- [ ] Chat reports were readable end-to-end without asking "what does this
-      mean" — and nothing important was omitted.
+- [ ] Skills read `_shared/style.md` immediately before reports and decision
+      requests, including revised reports after further work.
+- [ ] Chat reports explained the features, key findings, recommendation, and
+      trade-offs without requiring "in simple terms" or "give me an example".
+      No wall of sections; full evidence and minor details remained in artifacts.
 - [ ] A second session in the same worktree self-located the topic without
       being told.
 - [ ] Switching `tracker:` in `config.md` is the only step needed to move

@@ -11,7 +11,7 @@ approves: what will be built, how we'll know it works, and in what PR-sized
 slices. Execution refuses to start without this approval.
 
 Read first: `~/.agents/skills/_shared/config.md`,
-`~/.agents/skills/_shared/topic.md`, `~/.agents/skills/_shared/style.md`.
+`~/.agents/skills/_shared/topic.md`.
 No production code changes — the only code written here is a throwaway spike.
 
 ## Process
@@ -36,9 +36,18 @@ approach conversation.
 
 - **Behavior contract:** acceptance criteria per slice — observable behavior,
   not implementation steps. These later become the tests execute writes first.
-- **PR stack:** tracer-bullet vertical slices in dependency order, each
-  demoable alone and sized for one focused session. Note which slices are
-  mechanical enough to delegate to faster models.
+- **PR plan:** choose the fewest PRs that keep the work coherent and easy to
+  review. Start with one PR for a cohesive feature. Split only at a natural
+  boundary with a concrete review, dependency, rollout, or ownership benefit.
+  Infrastructure, backend, and frontend can be useful boundaries when they
+  stand on their own; do not split by layer automatically. Explain why each
+  additional PR belongs on its own. A medium feature should not become five
+  or six PRs without strong reasons.
+- **Implementation slices:** use small, verifiable steps within those PRs.
+  A session, test step, or ticket does not automatically need its own PR.
+  Order genuine dependencies and record which slices belong to each PR;
+  keep tests with the behavior they verify. Note delegation opportunities
+  in the artifact, not as extra PR boundaries.
 - **Test plan:** core behaviors to cover — major coverage of the concepts that
   matter, explicitly not exhaustive micro-testing.
 - **Deliberate deviations:** anything knowingly outside standard practice,
@@ -49,8 +58,13 @@ approach conversation.
 
 ### 4. The gate
 
-Present the full design in chat (style contract): feasibility evidence,
-acceptance criteria, the stack, trade-offs. Iterate until the human says
+Read `~/.agents/skills/_shared/style.md` now, immediately before reporting.
+Explain what will be built, how it will behave (with an example where useful),
+why this approach fits, and any meaningful limits or trade-offs. Summarize the
+feasibility result and PR plan in plain language; keep the full acceptance
+criteria and technical evidence in `design.md`. Make every scope or behavior
+choice needing approval clear in chat. Reread the style contract before
+presenting a revised design after further work. Iterate until the human says
 **"approved"** — explicitly. Denied or redirected means revise or return to
 investigate; never proceed on silence.
 

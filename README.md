@@ -24,7 +24,7 @@ Human gates: **approach choice** (investigate), **design approval** (design),
 | Path | What |
 |---|---|
 | `_shared/config.md` | vault path + active tracker — the one place to change either |
-| `_shared/style.md` | communication contract: tiered findings, compress prose not detail |
+| `_shared/style.md` | communication contract: simple decision reports, full evidence in artifacts |
 | `_shared/topic.md` | topic folder, `_state.md` phases, decisions log, drift policy |
 | `_shared/pr.md` | PR title/description style |
 | `_shared/trackers/` | per-tracker operation recipes (github, linear) |

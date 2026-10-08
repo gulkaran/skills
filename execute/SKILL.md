@@ -11,7 +11,7 @@ evidence that tests came before implementation. Ends at a human gate before
 any PR exists.
 
 Read first: `~/.agents/skills/_shared/config.md`,
-`~/.agents/skills/_shared/topic.md`, `~/.agents/skills/_shared/style.md`,
+`~/.agents/skills/_shared/topic.md`,
 `~/.agents/skills/_shared/pr.md`.
 
 ## Preconditions
@@ -52,13 +52,15 @@ security) → **stop, raise in chat with options, wait**.
 
 When the stack (or the agreed set of slices) is green:
 
-1. Report in chat (style contract):
-   - what was built, per slice, against its acceptance criteria;
-   - **deviations from design** (from `decisions.md`, including drift);
-   - any post-red test changes and their justifications;
-   - diffstat and test results.
+1. Read `~/.agents/skills/_shared/style.md` immediately before reporting.
+   Explain the features delivered and verification results in simple terms.
+   Call out deviations and post-red test changes with their importance and
+   justification. Save detailed test output and diffstats in an execution appendix to
+   `design.md`.
+   Reread the style contract before a revised report after further work.
 2. **Wait for approval.** The human may request changes first.
 3. On approval: record `pre_pr_approved: <date>` in `_state.md`, push, and
-   open the PR per the PR style doc (one PR per slice of the stack, stacked if
-   the tooling supports it). Record the PR URL(s) in `_state.md`, phase →
+   open PRs per the PR style doc and the approved design's PR grouping.
+   Multiple implementation slices may share a PR; do not create a PR per
+   session or test step. Record the PR URL(s) in `_state.md`, phase →
    `in-review`, log line. Tell the human the topic is ready for `self-review`.

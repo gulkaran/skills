@@ -1,51 +1,65 @@
 # Communication contract
 
-Every workflow skill that reports to the human follows this contract, in chat
-and in artifacts. The reader is a software engineer who needs to understand
-their codebase and every decision made in it. Write for that reader.
+Read this file after the substantive work, immediately before composing a
+report or decision request to the human. Read it again before a revised report
+or final handoff after further work. Do not rely on having read it at startup.
 
-## The prime rule
+## Simple terms, useful detail
 
-**Compress prose, preserve detail. Omit words, not information.**
+Write so the human understands on the first read, without asking for a simpler
+explanation. Prefer concise, everyday language over formal grammar, jargon,
+and polished filler. Short sentences and fragments are fine; ambiguity is not.
+Explain an unavoidable technical term where it appears.
 
-Simple does not mean shallow. Simple means detailed but easy to follow: plain
-language, structure, and inline context — never deletion of findings.
+Lead with what was found and what you recommend. Explain the main features or
+behaviors being built or changed, and connect the reasoning: what we learned,
+why that favors this approach, and what trade-off we accept. Include a short,
+concrete example when it makes the behavior or choice easier to understand.
+For example: "If an upload fails, retry only that file. Finished uploads stay
+saved." Do not assume the human can translate architecture terms into behavior.
 
-## Reports go in chat, in full
+## Chat is the decision report
 
-- The full report lands in chat, not a TL;DR with a link. The human reads the
-  report where the conversation is happening.
-- Open with a short summary (≤5 lines), then the report.
-- End with exactly what is needed from the human (a decision, an approval, an
-  answer), stated explicitly.
+Give enough detail to understand the scope and make the decision in chat.
+Keep the technical record in the artifact. Do not paste the entire artifact or
+replace the explanation with a vague summary and a link.
 
-## Tiered findings
+Use a few short paragraphs or a compact list. Usually no headings are needed;
+use at most two when they help. Do not turn workflow steps into report sections
+or repeat a summary as a longer report below it. Add detail when the decision
+requires it, not to fill a template.
 
-Applies to anything that produces findings (investigation, review, feasibility):
+Cover what matters for the current phase, without making each item a section:
 
-- **High-impact findings** get full treatment: what, why it matters, and inline
-  context ("this matters because X lives in Y and is called by Z"). A finding
-  must be understandable without opening the code.
-- **Lower-impact findings** get one line each under a single
-  `Lower-impact: …` block. Each must be **individually named** so the human can
-  ask about it. "Various minor issues" is banned — an unnamed finding is one
-  nobody can ask about.
-- The tier call is impact-based. When in doubt, **promote**: burying a real
-  finding is worse than one extra paragraph.
-- Full detail for lower-impact findings still lands in the artifact's appendix,
-  so "tell me more about y" is already answered on disk.
+- Main findings and the features or behaviors affected, including meaningful
+  limits on what will be built.
+- Recommended approach and why. Mention credible alternatives with the
+  trade-off that distinguishes them; do not invent alternatives.
+- Risks, uncertainty, and deviations that affect the decision, with their
+  importance and practical consequence.
+- What is needed from the human, if anything: a specific choice or approval.
 
-## Structure over prose
+For a PR plan, describe each PR in one plain sentence: what it delivers and,
+if there is more than one, why it needs to be separate. Avoid file inventories,
+commit choreography, and long implementation narratives in chat.
 
-- Headers that let the reader skip; one idea per bullet; tables for
-  comparisons and finding lists.
-- No walls of text. If a paragraph holds three facts, it is three bullets.
-- A finding without its evidence is banned; a finding buried in three
-  paragraphs is equally banned.
+## Findings and deviations by importance
 
-## Artifacts
+- **High impact:** explain the issue, a concrete consequence, and the proposed
+  response. Include enough evidence or context to make the reasoning credible.
+  Never hide a blocker or a change to scope, public behavior, or an approval
+  decision just to make the report shorter.
+- **Lower impact:** name it and its consequence in one line when it matters
+  to the human. Put routine checks, minor technical details, and evidence that
+  does not affect the decision in the artifact.
+- For deviations, say what differs from the plan or usual practice, how much
+  it matters, and why. Distinguish deliberate choices from unresolved issues.
+  Do not promote a minor finding merely because more detail exists.
 
-The artifact (research.md, design.md, review.md, …) is the same report the
-human saw, plus an **appendix**: raw evidence, commands run, file paths, spike
-output — everything a later agent session needs that the human didn't need in
-chat.
+## Artifacts preserve the full record
+
+Save the human-facing explanation along with the complete findings, reasoning,
+acceptance criteria, decisions, and supporting evidence needed by later agents.
+Use an appendix for paths, commands, test or spike output, and detailed findings.
+Artifacts may be more structured and detailed than chat; keep their language
+plain too. Concise chat must not mean lost research or an incomplete contract.
