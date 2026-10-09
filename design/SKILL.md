@@ -43,6 +43,12 @@ approach conversation.
   stand on their own; do not split by layer automatically. Explain why each
   additional PR belongs on its own. A medium feature should not become five
   or six PRs without strong reasons.
+- **Per-PR scope:** give each PR a descriptive title, a one-sentence
+  responsibility, and a short, simple list of the concrete features or changes
+  it adds. Say what works after it lands, including when it only lays groundwork
+  for a later PR. Make dependencies and boundaries between PRs clear so the
+  reader can tell which PR delivers each part of the feature. Labels like
+  "backend" or "UI" alone are not enough.
 - **Implementation slices:** use small, verifiable steps within those PRs.
   A session, test step, or ticket does not automatically need its own PR.
   Order genuine dependencies and record which slices belong to each PR;
@@ -61,8 +67,11 @@ approach conversation.
 Read `~/.agents/skills/_shared/style.md` now, immediately before reporting.
 Explain what will be built, how it will behave (with an example where useful),
 why this approach fits, and any meaningful limits or trade-offs. Summarize the
-feasibility result and PR plan in plain language; keep the full acceptance
-criteria and technical evidence in `design.md`. Make every scope or behavior
+feasibility result in plain language. Present the PR plan one PR at a time:
+title, responsibility, a short, concise, simple list of features/changes, and
+what works after it lands. Include dependencies or deferred behavior where
+needed to make each PR's scope clear. Keep the full acceptance criteria and
+technical evidence in `design.md`. Make every scope or behavior
 choice needing approval clear in chat. Reread the style contract before
 presenting a revised design after further work. Iterate until the human says
 **"approved"** — explicitly. Denied or redirected means revise or return to
